@@ -1,0 +1,8 @@
+{
+  "name": "guardia",
+  "app_id": "b93b7a8a",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

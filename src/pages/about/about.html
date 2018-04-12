@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="secondary" >
+    <ion-title>
+      Resultado
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div padding>
+        <ion-segment [(ngModel)]="opcion">
+          <ion-segment-button value="Jordana">
+            Jordana
+          </ion-segment-button>
+          <ion-segment-button value="Franco">
+            Franco
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      
+      <div [ngSwitch]="opcion">
+        <ion-list *ngSwitchCase="'Franco'" active>
+          <ion-item *ngFor="let item of _fecha.arrayNoTrabaja" >
+          <p>{{item._d | date:'fullDate'}}</p>
+          </ion-item>
+          
+        </ion-list>
+      
+        <ion-list *ngSwitchCase="'Jordana'">
+          <ion-item *ngFor="let item of _fecha.arrayTrabaja" >
+              <p>{{item._d | date:'fullDate'}}</p>
+          </ion-item>
+          
+        </ion-list>
+      </div>
+
+</ion-content>
